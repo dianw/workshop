@@ -1,11 +1,12 @@
 package org.meruvian.workshop.jaxrs.config;
 
+import org.meruvian.workshop.jaxrs.Main;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfig {
@@ -14,7 +15,7 @@ public class SwaggerConfig {
 		BeanConfig config = new BeanConfig();
 		config.setVersion("0.0.1-SNAPSHOT");
 		config.setBasePath("/api");
-        config.setResourcePackage("org.meruvian.workshop.jaxrs");
+		config.setResourcePackage(Main.class.getPackage().getName());
 		config.setScan(true);
 		
 		return config;

@@ -29,20 +29,20 @@ public interface NewsService {
 	@Path("/{id}")
 	@ApiOperation(value = "Find news by ID", response = News.class)
 	News getNewsById(@PathParam("id") @ApiParam("News ID") long id);
-	
+
 	@GET
 	@ApiOperation(value = "Find news", response = News.class, responseContainer = "List")
 	List<News> findNewsByTitle(@QueryParam("title") @DefaultValue("") String title);
-	
+
 	@POST
 	@ApiOperation(value = "Save news", response = News.class)
 	News saveNews(News news);
-	
+
 	@PUT
 	@Path("/{id}")
 	@ApiOperation(value = "Update news", response = News.class)
 	News updateNews(@PathParam("id") @ApiParam("News ID") long id, News news);
-	
+
 	@DELETE
 	@Path("/{id}")
 	@ApiOperation(value = "Delete news")

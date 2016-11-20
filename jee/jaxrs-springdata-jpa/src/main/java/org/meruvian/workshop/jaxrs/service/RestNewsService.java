@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class RestNewsService implements NewsService {
 	@Inject
 	private NewsRepository newsRepository;
-	
+
 	@Override
 	public News getNewsById(long id) {
 		return newsRepository.findById(id);
@@ -31,7 +31,7 @@ public class RestNewsService implements NewsService {
 	public News saveNews(News news) {
 		news.setId(0);
 		news.setCreateDate(new Date());
-		
+
 		return newsRepository.save(news);
 	}
 
@@ -43,7 +43,7 @@ public class RestNewsService implements NewsService {
 			ori.setTitle(news.getTitle());
 			ori.setContent(news.getContent());
 		}
-		
+
 		return ori;
 	}
 

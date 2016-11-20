@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class RestNewsService implements NewsService {
 	@Inject
 	private NewsRepository newsRepository;
-	
+
 	@Override
 	public News getNewsById(long id) {
 		return newsRepository.getById(id);
@@ -31,7 +31,7 @@ public class RestNewsService implements NewsService {
 	@Override
 	public News updateNews(long id, News news) {
 		news.setId(id);
-		
+
 		return newsRepository.update(news);
 	}
 
